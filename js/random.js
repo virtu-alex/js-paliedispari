@@ -18,15 +18,15 @@ Dichiariamo chi ha vinto.*/
 
 
 function randomNumberFromCpu(min, max) {
-    
+
     return Math.floor(Math.random() * (max - min) + min)
 }
 
 
-console.log(randomNumberFromCpu(1, 5));
+// console.log(randomNumberFromCpu(1, 5));
 
 
-const userChoice = prompt("Pari o dispari");
+const userChoice = prompt("Pari o dispari").toLowerCase();
 const userNumber = parseInt(prompt("Inserisci un numero compreso tra 1 e 5"));
 
 
@@ -35,6 +35,28 @@ let sum = 0;
 sum = randomCpu + userNumber;
 
 //Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-function isEven(number){
-    let 
+function isEven(numero) {
+    let result;
+    if (numero % 2 === 0) {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result;
 }
+// se l'utente mette pari e esce somma pari ----> hai vinto
+// se l'utente mette dispari e esce somma dispari ---> hai vinto
+// se l'utente mette pari e esce somma dispari ---> hai perso
+// se l'utente mette dispari e esce sommma pari ---> hai perso
+if (userChoice == "pari" && isEven(sum)) {
+    alert('Hai vinto')
+} else if (userChoice == "dispari" && !isEven(sum)) {
+    alert('Hai vinto')
+} else if (userChoice == "pari" && !isEven(sum)) {
+    alert('Hai perso')
+} else if (userChoice == "dispari" && isEven(sum)) {
+    alert('Hai perso')
+}
+
+console.log(isEven(sum));
+console.log(userNumber, randomCpu);

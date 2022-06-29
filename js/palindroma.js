@@ -26,13 +26,15 @@ function swapWord(word) {
     i--;
   }
   // controllo se abbia inserito effettivamente LETTERE ed in caso, chiedo nuovamente.
-  while (!isNaN(word) || word.length == 1) {
+  while (!isNaN(word) || word.length == "") {
     // Alert NO PAROLA
     alert('Non hai inserito una parola')
     // Richiamo nuovamente il prompt FINCHE' non soddisfa i requisiti (in questo caso, no numeri)
     word = prompt("Inserisci una parola", "anna");
   }
   // Stampo in console i risultati
+  console.log(word)
+  console.log(reversedWord)
   if (word == reversedWord) {
     console.log('la parola inserita è palindroma');
   } else {
