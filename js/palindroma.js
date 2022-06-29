@@ -6,7 +6,7 @@ Creare una funzione per capire se la parola inserita è palindroma*/
 // ?1 - Come la chiamo?
 // ?2 - Ho bisogno di parametri? (se si quali?)
 // ?3 - Devo restituire qualcosa? (se si cosa? di che tipo?)
-// ?4 OPZIONALE:  Qualcosa  potrebbe andare storto? (se si, cosa?)
+// ?4 - OPZIONALE:  Qualcosa  potrebbe andare storto? (se si, cosa?)
 
 
 
@@ -16,12 +16,12 @@ let reversedWord = swapWord(userWord);
 //AZIONE 2 ---- CREO UNA FUNZIONE CON RELATIVO CONTROLLO
 function swapWord(word) {
   //AZIONE 3 ---- VARIABILE APPOGGIO DI TIPO STRINGA
-  let reversedWord = '';
+  let result = '';
   //DICHIARO VARIABILE "I" PER IL CICLO WHILE
   let i = word.length - 1;
   //CICLO WHILE
   while (i >= 0) {
-    reversedWord += word[i];
+    result += word[i];
     //DECREMENTO
     i--;
   }
@@ -34,12 +34,12 @@ function swapWord(word) {
   }
   // Stampo in console i risultati
   console.log(word)
-  console.log(reversedWord)
-  if (word == reversedWord) {
+  console.log(result)
+  if (word == result) {
     console.log('la parola inserita è palindroma');
   } else {
     console.log('la parola inserita non è palindroma');
   }
   // ----- Return -----
-  return reversedWord;
+  return result;
 }
